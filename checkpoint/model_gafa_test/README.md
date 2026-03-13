@@ -1,0 +1,1 @@
+Put here GAFA pretrained weights

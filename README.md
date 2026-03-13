@@ -1,0 +1,99 @@
+# GazeD
+
+This is the official PyTorch implementation of the paper *"[GazeD: Context-Aware Diffusion for Accurate 3D Gaze Estimation](https://arxiv.org/abs/2601.12948)"* (3DV 2026).
+
+
+GazeD is a diffusion-based model primarily for gaze estimation but can perform also pose estimation. This README provides instructions for setup, training, testing, and inference.
+
+
+## 1. Setup
+
+### Environment Setup 
+
+You can find all the packages and dependencies in the environment.yml file. 
+If you have conda, you can simply run
+
+```
+conda env create -f environment.yml
+
+```
+Otherwise you can refer to the requirements.txt file.
+
+### Download the Webdatasets
+
+Download the preprocessed datasets [HERE](https://ailb-web.ing.unimore.it/publicfiles/TME/list_wd.html)
+You can store the webdatasets whethere you like, but you need to to specify the right path in the configuration files in the config folder in order to have the correct webdataset paths. Modify the voice dataset.root with your webdataset PATH.
+
+### Download Pretrained Weights
+Before starting testing, you need to download the pretrained weights [HERE](https://drive.google.com/drive/folders/1XzUYGoMY3Qyvjw-6k4pivnr7RbcyK0B3?usp=sharing) 
+
+Place PoseHRNET weights in the following folder:
+
+```
+checkpoint/posehrnet
+```
+
+
+## 3. Testing the Model
+
+To test the model, download the corresponding pretrained weights and place them in the folder:
+
+```
+checkpoint/model_{dataset}_test
+```
+Then run:
+
+```
+python test.py --config config/{dataset}.yaml -c checkpoint --save_predictions -timesteps 20 -num_proposals 20\
+                         --evaluate best_{dataset}.bin --dataset {dataset} 
+```
+
+### Explanation of Parameters:
+- `--config config/{DATASET}.yaml` : Specifies the configuration file.
+- `-c checkpoint` : Directory where model weights are stored.
+- `--evaluate best_{DATASET}.bin` : Loads the best model weights for the specified dataset. This parameter is required. 
+- `-timesteps 20` : Number of diffusion steps.
+- `-num_proposals 20` : Number of hypotheses generated for the image.
+- `--save_predictions` : Enables saving outputs inside ".npy" files in the predictions folder.
+- `--dataset {DATASET}` : Specifies the dataset to be tested. Dataset can be GFIE,GAFA or EgoExo. Don't worry about CAPS, it should not be case sensitive.
+
+
+
+## 4. Inference
+
+To perform inference on a single image, use the following command:
+
+```
+python inference.py -timesteps 20 -num_proposals 20 --image_path IMAGE_PATH
+```
+
+### Explanation of Parameters:
+- `-timesteps 20` : Number of diffusion steps.
+- `-num_proposals 20` : Number of hypotheses generated for the image.
+- `--image_path IMAGE_PATH` : Path to the image for inference.
+
+
+The inference will be performed with COCO17 annotation using YOLOv8 pose as a 2D pose estimator, and best_egoexo weights.
+You can change of course the 2D Pose Estimator and adapt everything to the other datasets. An image of the result will be saved in the images folder under the name "result.png". One example is already in the folder.
+NOTE: The method was trained using complete 2D poses. Make sure the 2D Pose is accurate and have no missing joints in order to have good results. 
+
+
+LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International License  https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+
+
+## Citation
+
+If you find our work useful for your project, please consider citing the paper:
+
+```bibtex
+@inproceedings{catalinigazed,
+  title={GazeD: Context-Aware Diffusion for Accurate 3D Gaze Estimation},
+  author={Catalini, Riccardo and Di Nucci, Davide and Borghi, Guido and Davoli, Davide and Garattoni, Lorenzo and Francesca, Gianpiero and Kawana, Yuki and Vezzani, Roberto},
+  booktitle={Thirteenth International Conference on 3D Vision},
+  year=2026
+}
+```
+---
+
+

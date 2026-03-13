@@ -1,0 +1,10 @@
+__pycache__/*
+*.bin
+*.pth
+logs/
+*.sh
+config/*
+ablative.py
+common/gaze_dformer_nodef.py
+main_diffusers.py
+inference.py
