@@ -58,26 +58,6 @@ python test.py --config config/{dataset}.yaml -c checkpoint --save_predictions -
 - `--dataset {DATASET}` : Specifies the dataset to be tested. Dataset can be GFIE,GAFA or EgoExo. Don't worry about CAPS, it should not be case sensitive.
 
 
-
-## 4. Inference
-
-To perform inference on a single image, use the following command:
-
-```
-python inference.py -timesteps 20 -num_proposals 20 --image_path IMAGE_PATH
-```
-
-### Explanation of Parameters:
-- `-timesteps 20` : Number of diffusion steps.
-- `-num_proposals 20` : Number of hypotheses generated for the image.
-- `--image_path IMAGE_PATH` : Path to the image for inference.
-
-
-The inference will be performed with COCO17 annotation using YOLOv8 pose as a 2D pose estimator, and best_egoexo weights.
-You can change of course the 2D Pose Estimator and adapt everything to the other datasets. An image of the result will be saved in the images folder under the name "result.png". One example is already in the folder.
-NOTE: The method was trained using complete 2D poses. Make sure the 2D Pose is accurate and have no missing joints in order to have good results. 
-
-
 LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International License  https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 

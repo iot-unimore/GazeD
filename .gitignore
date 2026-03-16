@@ -3,7 +3,6 @@ __pycache__/*
 *.pth
 logs/
 *.sh
-config/*
 ablative.py
 common/gaze_dformer_nodef.py
 main_diffusers.py
