@@ -1,3 +1,5 @@
+LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International License  https://creativecommons.org/licenses/by-nc-sa/4.0/
+
 # GazeD
 
 This is the official PyTorch implementation of the paper *"[GazeD: Context-Aware Diffusion for Accurate 3D Gaze Estimation](https://arxiv.org/abs/2601.12948)"* (3DV 2026).
@@ -56,10 +58,6 @@ python test.py --config config/{dataset}.yaml -c checkpoint --save_predictions -
 - `-num_proposals 20` : Number of hypotheses generated for the image.
 - `--save_predictions` : Enables saving outputs inside ".npy" files in the predictions folder.
 - `--dataset {DATASET}` : Specifies the dataset to be tested. Dataset can be GFIE,GAFA or EgoExo. Don't worry about CAPS, it should not be case sensitive.
-
-
-LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International License  https://creativecommons.org/licenses/by-nc-sa/4.0/
-
 
 
 ## Citation
