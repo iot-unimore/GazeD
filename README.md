@@ -4,8 +4,11 @@ LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International
 
 This is the official PyTorch implementation of the paper *"[GazeD: Context-Aware Diffusion for Accurate 3D Gaze Estimation](https://arxiv.org/abs/2601.12948)"* (3DV 2026).
 
+<img src="gif/gazed_sample.gif"/><br>
 
 GazeD is a diffusion-based model primarily for gaze estimation but can perform also pose estimation. This README provides instructions for setup, training, testing, and inference.
+
+
 
 
 ## 1. Setup
@@ -23,11 +26,16 @@ Otherwise you can refer to the requirements.txt file.
 
 ### Download the Webdatasets
 
-Download the preprocessed datasets [HERE](https://ailb-web.ing.unimore.it/publicfiles/TME/list_wd.html)
+Download the preprocessed datasets:
+
+- [GFIE] (https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GFIE.zip) 
+- [GAFA] (https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GAFA.zip) 
+- [EgoExo](https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/EgoExo.zip)
+
 You can store the webdatasets whethere you like, but you need to to specify the right path in the configuration files in the config folder in order to have the correct webdataset paths. Modify the voice dataset.root with your webdataset PATH.
 
 ### Download Pretrained Weights
-Before starting testing, you need to download the pretrained weights [HERE](https://drive.google.com/drive/folders/1XzUYGoMY3Qyvjw-6k4pivnr7RbcyK0B3?usp=sharing) 
+Before starting testing, you need to download the pretrained weights [HERE](https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/checkpoints.zip) 
 
 Place PoseHRNET weights in the following folder:
 
