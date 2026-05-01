@@ -30,8 +30,8 @@ Otherwise you can refer to the requirements.txt file.
 
 Download the preprocessed datasets:
 
-- [GFIE] (https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GFIE.zip) 
-- [GAFA] (https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GAFA.zip) 
+- [GFIE](https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GFIE.zip) 
+- [GAFA](https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/GAFA.zip) 
 - [EgoExo](https://ailb-web.ing.unimore.it/publicfiles/gbData/GazeD/GazeD_WDS/EgoExo.zip)
 
 You can store the webdatasets whethere you like, but you need to to specify the right path in the configuration files in the config folder in order to have the correct webdataset paths. Modify the voice dataset.root with your webdataset PATH.
