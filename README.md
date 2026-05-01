@@ -4,7 +4,9 @@ LICENCE: Creative Commons Attribution-NonCommercial ShareAlike 4.0 International
 
 This is the official PyTorch implementation of the paper *"[GazeD: Context-Aware Diffusion for Accurate 3D Gaze Estimation](https://arxiv.org/abs/2601.12948)"* (3DV 2026).
 
-<img src="gif/gazed_sample.gif"/><br>
+<p align="center">
+  <img src="gif/gazed_sample.gif" />
+</p>
 
 GazeD is a diffusion-based model primarily for gaze estimation but can perform also pose estimation. This README provides instructions for setup, training, testing, and inference.
 
